@@ -1,10 +1,10 @@
 # Unrestricted CLI Test
 
-This repository is set up to test the `@simonb97/server-win-cli` NPM package.
+This repository is set up to test the `@simonb97/server-win-cli` NPM package directly using NPX.
 
 ## Configuration
 
-The configuration is stored in `config.json` and includes the following settings:
+The configuration is stored in `config.json` with the exact structure:
 
 ```json
 {
@@ -20,27 +20,37 @@ The configuration is stored in `config.json` and includes the following settings
 
 ## Usage
 
-To test the CLI command, you can either:
+You can run the CLI in multiple ways:
 
-1. Run the included script:
-   ```
-   node index.js
-   ```
-
-2. Use npm start (which executes the same command):
+1. **Direct execution:**
    ```
    npm start
    ```
 
-## What this does
+2. **Using the config-based approach:**
+   ```
+   node index.js
+   ```
 
-This repository demonstrates running the `@simonb97/server-win-cli` package using NPX. The index.js file will:
+3. **Using the simplified script:**
+   ```
+   node run-cli.js
+   ```
 
-1. Load the configuration from config.json
-2. Execute the NPX command with the appropriate arguments
-3. Display the output from the command execution
+## Testing Steps
+
+1. Clone this repository
+2. Run any of the commands above to execute the CLI
+3. The script will automatically install and run `@simonb97/server-win-cli`
+
+## Repository Structure
+
+- `config.json` - Contains the CLI configuration
+- `index.js` - Reads the config file and executes the CLI command
+- `run-cli.js` - Directly executes the CLI command without config
+- `package.json` - Contains npm scripts to run the CLI
 
 ## Notes
 
-- This is intended for Windows environments, as indicated by the package name
-- The -y flag automatically accepts any prompts during installation
+- This package is designed for Windows environments
+- The `-y` flag automatically accepts any prompts during installation
