@@ -1,29 +1,28 @@
 const { spawn } = require('child_process');
-const config = require('./config.json');
+const fs = require('fs');
 
-console.log('Starting CLI test...');
-console.log('Config:', JSON.stringify(config.config['unrestricted-cli'], null, 2));
+// Read the config file
+const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 
-// Extract command and arguments from config
-const { command, args } = config.config['unrestricted-cli'];
+console.log('Starting CLI execution...');
+console.log('Config:', JSON.stringify(config, null, 2));
 
-// Function to execute the CLI command
-function executeCliCommand() {
-  console.log(`Executing: ${command} ${args.join(' ')}`);
-  
-  const process = spawn(command, args, { 
-    stdio: 'inherit',
-    shell: true
-  });
-  
-  process.on('error', (error) => {
-    console.error(`Error executing command: ${error.message}`);
-  });
-  
-  process.on('close', (code) => {
-    console.log(`Command execution completed with code ${code}`);
-  });
-}
+// Execute the CLI command directly
+const command = config['unrestricted-cli'].command;
+const args = config['unrestricted-cli'].args;
 
-// Run the command
-executeCliCommand();
+console.log(`Executing: ${command} ${args.join(' ')}`);
+
+// Execute the command
+const process = spawn(command, args, { 
+  stdio: 'inherit',
+  shell: true
+});
+
+process.on('error', (error) => {
+  console.error(`Error executing command: ${error.message}`);
+});
+
+process.on('close', (code) => {
+  console.log(`Command execution completed with code ${code}`);
+});
