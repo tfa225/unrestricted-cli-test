@@ -4,8 +4,8 @@
   "description": "Testing the @simonb97/server-win-cli command",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx -y @simonb97/server-win-cli"
+    "start": "npx -y @simonb97/server-win-cli",
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
