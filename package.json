@@ -1,0 +1,24 @@
+{
+  "name": "unrestricted-cli-test",
+  "version": "1.0.0",
+  "description": "Testing the @simonb97/server-win-cli command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx -y @simonb97/server-win-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tfa225/unrestricted-cli-test.git"
+  },
+  "keywords": [
+    "cli",
+    "test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tfa225/unrestricted-cli-test/issues"
+  },
+  "homepage": "https://github.com/tfa225/unrestricted-cli-test#readme"
+}
