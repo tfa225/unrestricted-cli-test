@@ -1,0 +1,13 @@
+{
+  "name": "unrestricted-cli-test",
+  "version": "1.0.0",
+  "config": {
+    "unrestricted-cli": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@simonb97/server-win-cli"
+      ]
+    }
+  }
+}
